@@ -1,0 +1,72 @@
+Algoritmo "JOKENPO"
+
+Var
+    J1, J2: CARACTERE
+   PEDRA, PAPEL, TESOURA, JOG1, JOG2: INTEIRO
+
+Inicio
+      PEDRA <- 1
+      PAPEL <- 2
+      TESOURA <- 3
+      ESCREVAL ("PARA JOGAR ESCOLHA PEDRA=1, PAPEL=2, TESOURA=3")
+      ESCREVA ("Entre com o nome do jogador 1: ")
+      LEIA (J1)
+      LIMPATELA
+      ESCREVAL ("PARA JOGAR ESCOLHA PEDRA=1, PAPEL=2, TESOURA=3")
+      ESCREVA ("Entre com o nome do jogador 2: ")
+      LEIA (J2)
+      LIMPATELA
+      ESCREVAL ("PARA JOGAR ESCOLHA PEDRA=1, PAPEL=2, TESOURA=3")
+      ESCREVA ("jogador 1 escolha: ")
+      LEIA (JOG1)
+      LIMPATELA
+
+      ENQUANTO (JOG1 <= 0) OU (JOG1 >=4) FACA
+         ESCREVAL ("PARA JOGAR ESCOLHA PEDRA=1, PAPEL=2, TESOURA=3")
+         ESCREVAL ("Entre com uma das opções dadas!")
+         ESCREVA ("jogador 1 escolha: ")
+         LEIA (JOG1)
+         LIMPATELA
+      FIMENQUANTO
+
+      ESCREVAL ("PARA JOGAR ESCOLHA PEDRA=1, PAPEL=2, TESOURA=3")
+      ESCREVA ("jogador 2 escolha: ")
+      LEIA (JOG2)
+      LIMPATELA
+
+      ENQUANTO (JOG2 <= 0) OU (JOG2 >=4) FACA
+         ESCREVAL ("PARA JOGAR ESCOLHA PEDRA=1, PAPEL=2, TESOURA=3")
+         ESCREVAL ("Entre com uma das opções dadas!")
+         ESCREVA ("jogador 2 escolha: ")
+         LEIA (JOG2)
+         LIMPATELA
+      FIMENQUANTO
+
+      SE (JOG1 = 1) E (JOG2 = 1) OU (JOG1 = 2) E (JOG2 =2) OU (JOG1 = 3) E (JOG2 = 3) ENTAO
+         ESCREVAL ("EMPATE")
+      SENAO
+           SE (JOG1 = 3) E (JOG2 = 2) ENTAO
+              ESCREVAL ("TESOURA vence PAPEL: Vitoria do ",J1)
+           SENAO
+                SE (JOG1 = 2) E (JOG2 = 1) ENTAO
+                   ESCREVAL ("PAPEL vence PEDRA: Vitoria do ",J1)
+                SENAO
+                     SE (JOG1 = 1) E (JOG2 = 3) ENTAO
+                        ESCREVAL ("PEDRA vence TESOURA: Vitoria do ",J1)
+                     FIMSE
+                FIMSE
+           FIMSE
+           SE (JOG1 = 2) E (JOG2 = 3) ENTAO
+              ESCREVAL ("PAPEL vence TESOURA: Vitoria do ",J2)
+           SENAO
+                SE (JOG1 = 1) E (JOG2 = 2) ENTAO
+                   ESCREVAL ("PEDRA vence PAPEL: Vitoria do ",J2)
+                SENAO
+                     SE (JOG1 = 3) E (JOG2 = 1) ENTAO
+                        ESCREVAL ("TESOURA vence PAPEL: Vitoria do ",J2)
+                     FIMSE
+                FIMSE
+           FIMSE
+      FIMSE
+
+Fimalgoritmo
