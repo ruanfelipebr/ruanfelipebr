@@ -1,0 +1,16 @@
+Algoritmo "real_ou_dolar"
+
+Var
+   reais, dolar : REAL
+
+Inicio
+      reais <-0
+      dolar <-0
+      ESCREVAL("Entre com a quantidade de reais que deseja investir: ")
+      LEIA(reais)
+      dolar <- reais / 3.45
+      LIMPATELA
+      ESCREVAL("Com R$",reais," você poderá comprar U$$",dolar:2:2)
+
+
+Fimalgoritmo
