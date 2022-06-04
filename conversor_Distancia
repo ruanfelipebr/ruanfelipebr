@@ -1,0 +1,24 @@
+Algoritmo "distancia"
+
+Var
+   me, km, hm, dam, dm, cm, mm : REAL
+Inicio
+      ESCREVAL("ENTRE COM O VALOR DA DISTÂNCIA EM METROS:")
+      LEIA(me)
+      LIMPATELA
+      km <- me / 1000
+      hm <- me / 100
+      dam <- me / 10
+      dm <- me * 10
+      cm <- me * 100
+      mm <- me * 1000
+
+      ESCREVAL("A distância de",me," metros equivale a:")
+      ESCREVAL(km," km")
+      ESCREVAL(hm," hm")
+      ESCREVAL(dam," dam")
+      ESCREVAL(dm," dm")
+      ESCREVAL(cm," cm")
+      ESCREVAL(mm," mm")
+
+Fimalgoritmo
