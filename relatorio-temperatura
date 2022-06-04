@@ -1,0 +1,83 @@
+Algoritmo "LEITURA_TEMP"
+
+Var
+   MANHA : VETOR[1..7] DE REAL
+   NOITE : VETOR [1..7] DE REAL
+   MEDIA_SE, MEDIA_T, MEDIA_M, MEDIA_DIA, MEDIA_NOITE, MEDIA_N, TEMP_M, TEMP_N, TEMP_M_B, TEMP_M_A, TEMP_N_A, TEMP_N_B : REAL
+   CONT, DIA_A, DIA_B, NOITE_A, NOITE_B, CONFIRM : INTEIRO
+
+Inicio
+
+      TEMP_M_B <- 100
+      TEMP_M_A <- 0
+      TEMP_N_B <- 100
+      TEMP_N_A <- 0
+      MEDIA_SE <- 0
+      MEDIA_M <- 0
+      MEDIA_N <- 0
+
+
+
+      ENQUANTO (CONFIRM <> 1) FACA
+
+      ESCREVAL("BEM VINDO AO SISTEMA DE RELATÓRIO DE TEMPERATURA SEMANAL")
+      ESCREVAL("DIGITE 1 PARA INICIAR.")
+      LEIA(CONFIRM)
+      LIMPATELA
+      
+      FIMENQUANTO
+
+      PARA CONT DE 1 ATE 7 FACA
+           ESCREVA("ENTRE COM A TEMPERATURA DO",CONT,"° DIA:")
+           LEIA(MANHA[CONT])
+           LIMPATELA
+           ESCREVA("ENTRE COM A TEMPERATURA DA",CONT,"° NOITE:")
+           LEIA(NOITE[CONT])
+           LIMPATELA
+
+           SE ((MANHA[CONT]) > TEMP_M_A) ENTAO
+              TEMP_M_A <- (MANHA[CONT])
+              DIA_A <- CONT
+           SENAO
+                SE ((MANHA[CONT]) < TEMP_M_B) ENTAO
+                   TEMP_M_B <- (MANHA[CONT])
+                   DIA_B <- CONT
+                SENAO
+                FIMSE
+           FIMSE
+
+           SE ((NOITE[CONT]) > TEMP_N_A) ENTAO
+              TEMP_N_A <- (NOITE[CONT])
+              NOITE_A <- CONT
+           SENAO
+                SE ((NOITE[CONT]) < TEMP_N_B) ENTAO
+                   TEMP_N_B <- (NOITE[CONT])
+                   NOITE_B <- CONT
+                SENAO
+                FIMSE
+           FIMSE
+           MEDIA_SE <- MEDIA_SE + (MANHA[CONT]) + (NOITE[CONT])
+           MEDIA_M <- MEDIA_M + (MANHA[CONT])
+           MEDIA_N <- MEDIA_N + (NOITE[CONT])
+
+       FIMPARA
+
+           MEDIA_T <- MEDIA_SE / 14
+           MEDIA_DIA <- MEDIA_M / 7
+           MEDIA_NOITE <- MEDIA_N / 7
+
+           ESCREVAL("CONSULTE A SEGUIR OS DADOS DE TEMPERATURA DESTA SEMANA:")
+           ESCREVAL("----------------------------------------------")
+           ESCREVAL("A TEMPERATURA MÉDIA SEMANAL FOI DE ",MEDIA_T:2:1,"º")
+           ESCREVAL("----------------------------------------------")
+           ESCREVAL("A TEMPERATURA MÉDIA DE MANHÃ FOI DE ",MEDIA_DIA:2:1,"º")
+           ESCREVAL("O DIA MAIS QUENTE FOI O",DIA_A,"º, EM QUE FEZ ",TEMP_M_A:2:1,"°")
+           ESCREVAL("O DIA MAIS FRIO FOI O",DIA_B,"º, EM QUE FEZ ",TEMP_M_B:2:1,"°")
+           ESCREVAL("----------------------------------------------")
+           ESCREVAL("A TEMPERATURA MÉDIA DA NOITE FOI DE ",MEDIA_NOITE:2:1,"º")
+           ESCREVAL("A NOITE MAIS QUENTE FOI A",NOITE_A,"º, EM QUE FEZ ",TEMP_N_A:2:1,"°")
+           ESCREVAL("A NOITE MAIS FRIA FOI A",NOITE_B,"º, EM QUE FEZ ",TEMP_N_B:2:1,"°")
+           ESCREVAL("----------------------------------------------")
+           ESCREVAL("FIM DO RELATÓRIO DE TEMPERATURA SEMANAL.")
+
+Fimalgoritmo
